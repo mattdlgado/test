@@ -1,12 +1,12 @@
 <div class="box">
     <span>Everything</span>
     <span>is</span>
-    <span>designed.</span>
+    <span>designed</span>
     <span>Few</span>
     <span>things</span>
     <span>are</span>
     <span>designed</span>
-    <span>well.</span>
+    <span>well</span>
     <span>- Brian</span>
     <span>Reed</span>
 </div>
@@ -16,7 +16,6 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 3px;
     }
 
     span {
@@ -25,5 +24,15 @@
         padding-inline: 8px;
         font-size: 0.9em;
         display: inline-flex;
+    }
+
+    span:nth-child(3) {
+        background-color: var(--text);
+        color: var(--bg)
+    }
+
+    span:nth-child(8) {
+        background-color: var(--text);
+        color: var(--bg)
     }
 </style>
