@@ -10,7 +10,7 @@ import Two from "../components/Two.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Components">
 	<h1>Mattdlgado components page</h1>
 	<main>
 		<One />
@@ -68,5 +68,19 @@ import Layout from "../layouts/Layout.astro";
 		main > :nth-child(8) {
 			grid-column: 4;
 		}
+	}
+
+	.badge {
+		border: 1px solid var(--text);
+		font-size: 0.9em;
+		padding-inline: 8px;
+		border-radius: 99px;
+		display: inline-flex;
+	}
+
+	.badge:not(.outline) {
+		background-color: var(--text);
+		border: 1px solid var(--text);
+		color: var(--bg);
 	}
 </style>
