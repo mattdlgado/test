@@ -1,0 +1,62 @@
+<div class="box">
+    <img
+        src="https://images.unsplash.com/photo-1715464881676-96662a4df3cb?q=80&w=3840&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+        loading="lazy"
+        height="233"
+        width="233"
+    />
+    <div>
+        <img
+            src="https://images.unsplash.com/photo-1715464881676-96662a4df3cb?q=80&w=3840&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            loading="lazy"
+            height="233"
+            width="233"
+        />
+        <div>6</div>
+    </div>
+</div>
+
+<style>
+    .box {
+        --br: 21px;
+        --p: 13px;
+        border-radius: var(--br);
+        padding: var(--p);
+        display: flex;
+        position: relative;
+    }
+
+    .box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+
+    .box > img,
+    .box > div > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .box > div {
+        width: 100%;
+        border: 1px solid var(--text);
+        border-radius: calc(var(--br) - var(--p));
+        padding: var(--p);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
