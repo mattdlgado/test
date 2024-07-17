@@ -1,0 +1,36 @@
+---
+import Robot from "../icons/Robot.astro";
+---
+
+<div class="box">
+    <span>
+        <Robot size={40} />
+    </span>
+</div>
+
+<style>
+    div {
+        background-color: var(--text);
+        color: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span {
+        display: flex;
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        transition:
+            250ms box-shadow ease-in-out,
+            250ms transform ease-in-out;
+    }
+
+    span:hover {
+        box-shadow:
+            3px 3px 13px hsl(0 0% 0% / 0.1),
+            -3px -3px 13px hsl(0 0% 100% / 0.5);
+        transform: scale(1.1);
+    }
+</style>

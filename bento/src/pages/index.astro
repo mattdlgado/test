@@ -1,7 +1,9 @@
 ---
+import Eight from "../components/Eight.astro";
 import Five from "../components/Five.astro";
 import Four from "../components/Four.astro";
 import One from "../components/One.astro";
+import Seven from "../components/Seven.astro";
 import Six from "../components/Six.astro";
 import Three from "../components/Three.astro";
 import Two from "../components/Two.astro";
@@ -9,6 +11,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
+	<h1>Mattdlgado components page</h1>
 	<main>
 		<One />
 		<Two />
@@ -16,17 +19,19 @@ import Layout from "../layouts/Layout.astro";
 		<Four />
 		<Five />
 		<Six />
+		<Seven />
+		<Eight />
 	</main>
 </Layout>
 
 <style>
 	main {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: 21px;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--base);
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 960px) {
 		main {
 			grid-template-columns: repeat(5, 1fr);
 		}
@@ -36,16 +41,12 @@ import Layout from "../layouts/Layout.astro";
 <style is:global>
 	.box {
 		border: 1px dashed var(--text);
-		border-radius: 21px;
-		padding: 21px;
+		border-radius: var(--base);
+		padding: var(--base);
 		overflow: hidden;
 	}
 
-	@media (min-width: 768px) {
-		.box {
-			min-height: 233px;
-		}
-
+	@media (min-width: 960px) {
 		main > :nth-child(3) {
 			grid-column: 1 / span 2;
 		}
@@ -55,8 +56,17 @@ import Layout from "../layouts/Layout.astro";
 			grid-row: 1 / span 2;
 		}
 
+		main > :nth-child(5) {
+			grid-row: span 2;
+		}
+
 		main > :nth-child(6) {
 			grid-column: span 2;
+			grid-row: span 2;
+		}
+
+		main > :nth-child(8) {
+			grid-column: 4;
 		}
 	}
 </style>
